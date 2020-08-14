@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>3º Aula</title>
+	<style>
+		body{
+			background-color: rgb(105, 105, 173);
+			color: white;
+			font: normal 20pt Arial;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var n1 = Number.parseInt(window.prompt('digite um numero: '));
+		var n2 = Number.parseFloat(window.prompt('digite outro numero: '));
+		var n3 = Number(window.prompt('digite outro de novo numero: '));
+		var s1 = window.prompt('digita o nome seu: ');
+
+		var r = n1 + n2 + n3;
+		var p = String(n1) + n2.toString() + String(n3);
+
+		window.alert(s1.toUpperCase() + ' vai quicar ' + r + ' vezes, ' + p + ' nos feriados');
+		window.alert(`eu fiz ${n1.toFixed(2).replace(".",",")}`);
+		window.alert(typeof r);
+		document.write(`<p>Ele receber ${n2.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'})}</p>`);
+		document.write(`<p>Ele receber ${n2.toLocaleString('pt-BR', {style:'currency', currency: 'USD'})}</p>`);
+		document.write(`<p>Ele receber ${n2.toLocaleString('pt-BR', {style:'currency', currency: 'EUR'})}</p>`);
+		document.write('<p>seu nome tem ' + s1.length + ' letras</p>');
+	</script>
+</body>
+</html>

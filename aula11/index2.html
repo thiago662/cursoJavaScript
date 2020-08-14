@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>11º Aula</title>
+	<style>
+		div#area{
+			font: normal 20pt Arial;
+			background: rgb(42, 139, 42);
+			color: white;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		let num = [];
+		var n = true;
+
+		while(n == true){
+			num.push(window.prompt('Insira um numero'));
+			n = window.confirm('quer inserir mais um numero?');
+		}
+
+		window.alert(num);
+
+		n = window.confirm('deixar em ordem?');
+
+		if(n == true){
+			num.sort();
+			window.alert(num);
+		}
+		
+		for(let i in num){
+			window.alert(`${i}º celula valor ${num[i]}.`);
+		}
+
+		n = window.confirm('buscar um valor?');
+
+		if(n == true){
+			var x = num.indexOf(window.prompt('Buscar'));
+			if(x == -1){
+				window.alert('valor não existe')
+			}else{
+				window.alert(`Esta na posição ${x}º do vetor`);
+			}
+		}
+
+		window.alert("Obrigado por usar :)")
+	</script>
+</body>
+</html>

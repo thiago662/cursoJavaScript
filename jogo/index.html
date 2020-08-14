@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>13º Aula</title>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="j">
+		<div id="v">
+			<input type="button" id="c1" onclick="rc1()">
+			<input type="button" id="c2" onclick="rc2()">
+			<input type="button" id="c3" onclick="rc3()">
+			<br>
+			<input type="button" id="c4" onclick="rc4()">
+			<input type="button" id="c5" onclick="rc5()">
+			<input type="button" id="c6" onclick="rc6()">
+			<br>
+			<input type="button" id="c7" onclick="rc7()">
+			<input type="button" id="c8" onclick="rc8()">
+			<input type="button" id="c9" onclick="rc9()">
+			<br>
+		</div>
+		<div id="d"><input type="button" id="btn1" value="Começar" onclick="start()"></div>
+	</div>
+
+	<script>
+		var vez = 0;
+		var status = 'stop';
+
+		var c1 = window.document.querySelector('input#c1');
+		var c2 = window.document.querySelector('input#c2');
+		var c3 = window.document.querySelector('input#c3');
+		var c4 = window.document.querySelector('input#c4');
+		var c5 = window.document.querySelector('input#c5');
+		var c6 = window.document.querySelector('input#c6');
+		var c7 = window.document.querySelector('input#c7');
+		var c8 = window.document.querySelector('input#c8');
+		var c9 = window.document.querySelector('input#c9');
+
+		var d = window.document.querySelector('div#d');
+
+		function ganhou(){
+			if(c1.value == 'o' && c2.value == 'o' && c3.value == 'o'){
+				finish('o');
+			}else if(c4.value == 'o' && c5.value == 'o' && c6.value == 'o'){
+				finish('o');
+			}else if(c7.value == 'o' && c8.value == 'o' && c9.value == 'o'){
+				finish('o');
+			}else if(c1.value == 'o' && c4.value == 'o' && c7.value == 'o'){
+				finish('o');
+			}else if(c2.value == 'o' && c5.value == 'o' && c8.value == 'o'){
+				finish('o');
+			}else if(c3.value == 'o' && c6.value == 'o' && c9.value == 'o'){
+				finish('o');
+			}else if(c1.value == 'o' && c5.value == 'o' && c9.value == 'o'){
+				finish('o');
+			}else if(c3.value == 'o' && c5.value == 'o' && c7.value == 'o'){
+				finish('o');
+			}else if(c1.value == 'x' && c2.value == 'x' && c3.value == 'x'){
+				finish('x');
+			}else if(c4.value == 'x' && c5.value == 'x' && c6.value == 'x'){
+				finish('x');
+			}else if(c7.value == 'x' && c8.value == 'x' && c9.value == 'x'){
+				finish('x');
+			}else if(c1.value == 'x' && c4.value == 'x' && c7.value == 'x'){
+				finish('x');
+			}else if(c2.value == 'x' && c5.value == 'x' && c8.value == 'x'){
+				finish('x');
+			}else if(c3.value == 'x' && c6.value == 'x' && c9.value == 'x'){
+				finish('x');
+			}else if(c1.value == 'x' && c5.value == 'x' && c9.value == 'x'){
+				finish('x');
+			}else if(c3.value == 'x' && c5.value == 'x' && c7.value == 'x'){
+				finish('x');
+			}
+		}
+
+		function start(){
+			status = 'start';
+			vez = 0;
+			zerar();
+			jogando();
+		}
+
+		function jogando(){
+			vez++;
+			if(vez%2 == 0){
+				d.innerHTML = `<p>${vez}º Rodada, vez do x</p>`;
+			}else{
+				d.innerHTML = `<p>${vez}º Rodada, vez do o</p>`;
+			}
+		}
+
+		function finish(g){
+			status = 'finish';
+			d.innerHTML = `<h4>${g} ganhou</h4><br><input type="button" id="btn1" value="Recomeçar" onclick="start()">`;
+		}
+
+		function zerar(){
+			c1.value = '';
+			c2.value = '';
+			c3.value = '';
+			c4.value = '';
+			c5.value = '';
+			c6.value = '';
+			c7.value = '';
+			c8.value = '';
+			c9.value = '';
+		}
+
+		function rc1(){
+			if(c1.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c1.value = 'x';
+					jogando();
+				}else{
+					c1.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc2(){
+			if(c2.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c2.value = 'x';
+					jogando();
+				}else{
+					c2.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc3(){
+			if(c3.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c3.value = 'x';
+					jogando();
+				}else{
+					c3.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc4(){
+			if(c4.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c4.value = 'x';
+					jogando();
+				}else{
+					c4.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc5(){
+			if(c5.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c5.value = 'x';
+					jogando();
+				}else{
+					c5.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc6(){
+			if(c6.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c6.value = 'x';
+					jogando();
+				}else{
+					c6.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc7(){
+			if(c7.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c7.value = 'x';
+					jogando();
+				}else{
+					c7.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc8(){
+			if(c8.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c8.value = 'x';
+					jogando();
+				}else{
+					c8.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+
+		function rc9(){
+			if(c9.value == '' && status == 'start'){
+				if(vez%2 == 0){
+					c9.value = 'x';
+					jogando();
+				}else{
+					c9.value = 'o';
+					jogando();
+				}
+				ganhou();
+			}
+		}
+	</script>
+</body>
+</html>
